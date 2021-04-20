@@ -1,5 +1,5 @@
 Arguments: 
-  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js remove typescript ts-node-dev
+  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js add body-parser
 
 PATH: 
   /data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets
@@ -14,7 +14,7 @@ Platform:
   android arm
 
 Trace: 
-  Error: EACCES: permission denied, symlink '../../../mkdirp/bin/cmd.js' -> '/storage/emulated/0/android/data/io.spck/files/chat/node_modules/fstream/node_modules/.bin/mkdirp'
+  Error: EACCES: permission denied, symlink '../../../../detect-libc/bin/detect-libc.js' -> '/storage/emulated/0/android/data/io.spck/files/chat/node_modules/@mapbox/node-pre-gyp/node_modules/.bin/detect-libc'
 
 npm manifest: 
   {
@@ -27,15 +27,17 @@ npm manifest:
       "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
     },
     "dependencies": {
-      "@types/express": "^4.17.11",
       "express": "^4.17.1",
       "reflect-metadata": "^0.1.13",
-      "sqlite3": "^5.0.2",
+      "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
       "typeorm": "^0.2.32",
       "uuid": "^8.3.2"
     },
     "devDependencies": {
-      "@types/uuid": "^8.3.0"
+      "@types/express": "^4.17.11",
+      "@types/uuid": "^8.3.0",
+      "ts-node-dev": "^1.1.6",
+      "typescript": "^4.2.4"
     }
   }
 
