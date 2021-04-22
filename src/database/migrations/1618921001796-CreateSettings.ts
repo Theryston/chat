@@ -9,7 +9,7 @@ export class CreateSettings1618921001796 implements MigrationInterface {
         columns: [
           {
             name: "id",
-            type: "uuid",
+            type: "varchar",
             isPrimary: true
          },
           {
