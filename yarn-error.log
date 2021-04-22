@@ -1,5 +1,5 @@
 Arguments: 
-  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js add @types/typeorm
+  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js add socket.io
 
 PATH: 
   /data/data/com.termux/files/usr/bin:/data/data/com.termux/files/usr/bin/applets
@@ -14,17 +14,7 @@ Platform:
   android arm
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2ftypeorm: Not found
-      at Request.params.callback [as _callback] (/data/data/com.termux/files/usr/share/yarn/lib/cli.js:66988:18)
-      at Request.self.callback (/data/data/com.termux/files/usr/share/yarn/lib/cli.js:140749:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (/data/data/com.termux/files/usr/share/yarn/lib/cli.js:141721:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (/data/data/com.termux/files/usr/share/yarn/lib/cli.js:141643:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (internal/streams/readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: EACCES: permission denied, symlink '../../../semver/bin/semver' -> '/storage/emulated/0/Android/data/io.spck/files/chat/node_modules/normalize-package-data/node_modules/.bin/semver'
 
 npm manifest: 
   {
@@ -33,7 +23,7 @@ npm manifest:
     "main": "src/server.ts",
     "license": "MIT",
     "scripts": {
-      "dev": "ts-node-dev src/server.ts",
+      "dev": "ts-node-dev src/server.ts --watch --clear",
       "typeorm": "ts-node-dev node_modules/typeorm/cli.js"
     },
     "dependencies": {
