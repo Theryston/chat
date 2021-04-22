@@ -5,10 +5,18 @@ import { SettingsService } from '../services/SettingsService'
 class SettingsController {
   async create(req: Request, res: Response) {
     const { chat, username } = req.body
-    
-    const settingsService = new SettingsService()
 
-    res.json(settingsService.create(chat, username))
+    try {
+      const settingsService = new SettingsService()
+
+      const settings = await settingsService.create({ chat, username });
+
+      res.json(settings)
+      
+    } catch (e) {
+      res.status(400)
+      res.json({ massage: e.massage })
+    }
   }
 }
 
