@@ -1,4 +1,4 @@
-import { SettingsRepository } from '../repositories/settingsRepository';
+import { SettingsRepository } from '../repositories/SettingsRepository';
 import { getCustomRepository } from 'typeorm';
 
 interface ISettingsCreate {
@@ -13,9 +13,11 @@ class SettingsService {
     const user = await settingsRepository.findOne({
       username
     })
-    if (!user) {
+
+    if (user) {
       throw new Error('User already existe!')
     }
+
     const settings = settingsRepository.create({
       chat,
       username

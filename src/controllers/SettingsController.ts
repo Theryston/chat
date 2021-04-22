@@ -12,10 +12,10 @@ class SettingsController {
       const settings = await settingsService.create({ chat, username });
 
       res.json(settings)
-      
+
     } catch (e) {
       res.status(400)
-      res.json({ massage: e.massage })
+      res.json({ massage: e })
     }
   }
 }
