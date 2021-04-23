@@ -18,7 +18,7 @@ export class CreateSettings1618921001796 implements MigrationInterface {
          },
           {
             name: "chat",
-            type: "boolean",
+            type: "int",
             default: true
          },
           {
