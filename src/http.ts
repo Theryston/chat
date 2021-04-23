@@ -18,6 +18,10 @@ app.get('/', (req: Request, res: Response) => {
   return res.render('html/client.html')
 })
 
+app.get('/admin', (req: Request, res: Response) => {
+  return res.render('html/admin.html')
+})
+
 const http = createServer(app);
 const io: Server = new Server(http)
 
