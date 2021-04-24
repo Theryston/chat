@@ -30,8 +30,7 @@ class MessagesService {
 
   async listByUser(id: string) {
     var messages = await this.messagesRepository.find({
-      where: { user_id: id },
-      relations: ["user"]
+      where: { user_id: id }
     })
 
     return messages;

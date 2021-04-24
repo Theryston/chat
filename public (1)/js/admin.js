@@ -1,6 +1,7 @@
 const socket = io();
+let connectionsUsers = [];
 
-socket.on("admin_list_all_users", connections => {
+socket.on("admin_list_all_users", (connections) => {
   connectionsUsers = connections;
   document.getElementById("list_users").innerHTML = "";
 
@@ -14,7 +15,7 @@ socket.on("admin_list_all_users", connections => {
 
     document.getElementById("list_users").innerHTML += rendered;
   });
-})
+});
 
 function call(id) {
   const connection = connectionsUsers.find(
