@@ -29,14 +29,9 @@ class ConnectionsService {
 
   }
 
-  async findByUserId(id: string) {
+  async findByUserId(id: string): Promise < any > {
     const connection = await this.connectionsRepository.findOne({ user_id: id })
-
-    if (connection) {
-      return connection;
-    } else {
-      return undefined
-    }
+    return connection;
   }
 
   async findAllWithoutAdmin() {
@@ -44,8 +39,29 @@ class ConnectionsService {
       where: { admin_id: null },
       relations: ["user"]
     })
-    
+
     return connections
+  }
+
+  async findBySocketID(socket_id: string): Promise < any > {
+    const connection = await this.connectionsRepository.findOne({
+      where: { socket_id },
+      relations: ["user"]
+    })
+
+    return connection;
+  }
+
+  async updateAdminId(user_id: string, admin_id: string) {
+   const connection = await this.connectionsRepository.createQueryBuilder()
+      .update(Connection)
+      .set({ admin_id })
+      .where("user_id = :user_id", {
+        user_id
+      })
+      .execute()
+    
+    return connection;
   }
 
 }
